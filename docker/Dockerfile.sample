@@ -1,0 +1,39 @@
+RUN <<EOF
+apt-get update
+apt-get install -y \
+    package-bar \
+    package-baz \
+    package-foo
+EOF
+
+# this is good practice as we try to minimise the number of RUN directives
+RUN apt-get update && apt-get install -y \
+    aufs-tools \
+    automake \
+    build-essential \
+    curl \
+    dpkg-sig \
+    libcap-dev \
+    libsqlite3-dev \
+    mercurial \
+    reprepro \
+    ruby1.9.1 \
+    ruby1.9.1-dev \
+    s3cmd=1.1.* \
+    && rm -rf /var/lib/apt/lists/*
+# it is good practice to list the intalled packages like this so that it is easy to edit them and keep track of installed packages
+
+# syntax=docker/dockerfile:1
+FROM alpine
+RUN export ADMIN_USER="mark" \
+    && echo $ADMIN_USER > ./mark \
+    && unset ADMIN_USER
+CMD sh
+
+
+# ENV directive is not used because the set env var in ENV will persist for the  further layers and wont get removed if we tried to remove by using RUN unset ENV_VAR
+
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
+CMD ["postgres"]
+#this is used to set image's main command now we can just pass arguements in the CMD directive like  CMD ["--help"]

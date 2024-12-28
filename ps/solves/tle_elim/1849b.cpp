@@ -12,12 +12,29 @@ using namespace std;
 #define endl "\n" 
 #define debug(x) cout << x << endl 
 const int mod = 1e9 + 7 ; 
+bool comp(pair<int,int> a, pair<int,int> b){
+    if(a.first == b.first) return a.second < b.second;
+    return a.first > b.first;
+}
 void pookie_bear()
 {
+    int n , k ; cin >> n >> k ;
+    vector<pair<int,int>> a(n) ;
 
-
+    int x ;
+    fra(i,0,n,1) {
+        cin >> x ;
+        if(x%k==0) a[i].first = k ;
+        else a[i].first = x%k ;
+        a[i].second = i+1 ;
+    }
+    sort(a.begin(),a.end(),comp) ;
+    for(auto i : a) {
+        cout << i.second << " " ;
+    }
+    cout << endl ;
 }
-int32_t main()
+int main()
 {
     ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
     int tc ; cin >> tc ;

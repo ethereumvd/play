@@ -1,3 +1,6 @@
 venv/
 docker/git_chall/
 tl
+ps/solves/cf/in
+ps/solves/tle_elim/in
+ps/solves/cses/in

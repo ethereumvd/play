@@ -12,7 +12,7 @@ using namespace std;
 #define endl "\n" 
 #define debug(x) cout << x << endl ;
 const int mod = 1e9 + 7 ; 
-int mx_sub_sum(vector<int> v, int s , int e) {
+int mx_sub_sum(vector<int>& v, int s , int e) {
     int mx = 0 ; int sum = 0 ;
     fra(i,s,e,1) {
         if(sum<0) sum = 0 ;
@@ -21,7 +21,7 @@ int mx_sub_sum(vector<int> v, int s , int e) {
     }
     return mx ;
 }
-int mn_sub_sum(vector<int> v , int s , int e) {
+int mn_sub_sum(vector<int>& v , int s , int e) {
     int mn = 0 ; int sum = 0 ;
     fra(i,s,e,1) {
         if(sum>0) sum = 0 ;
@@ -77,8 +77,8 @@ void pookie_bear()
     }
 
     cout << ans.size() << endl ;
-    for(auto i : ans) cout << i << " " ;
-    cout << endl ;
+    // for(auto i : ans) cout << i << " " ;
+    // cout << endl ;
 }
 int main()
 {

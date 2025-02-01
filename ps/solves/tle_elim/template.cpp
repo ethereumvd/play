@@ -12,7 +12,7 @@ using namespace std;
 #define endl "\n" 
 #define debug(x) cout << x << endl 
 const int mod = 1e9 + 7 ; 
-void pookie_bear()
+void jogo() 
 {
 
 
@@ -21,5 +21,5 @@ int32_t main()
 {
     ios::sync_with_stdio(false), cin.tie(0), cout.tie(0);
     int tc ; cin >> tc ;
-    while(tc--) pookie_bear() ;
+    while(tc--) jogo() ;
 } 

@@ -6,7 +6,6 @@ void jogo() {
     vector<int> a(n);
     for(int &x:a) cin >> x ;
 
-
     if(a[0]==1) {
         cout << n+1 << " ";
         for(int i=1; i<=n ;i++) cout << i << " ";
@@ -18,14 +17,15 @@ void jogo() {
                 hop = i+1; break;
             }
         }
+        if(a[n-1]==0) hop = n;
         if(hop==-1) cout << -1 ; 
         else {
             for(int i=1; i<=n; i++) {
                 cout << i << " ";
                 if(i==hop) cout << n+1 << " " ;
             }
-            cout << "\n";
         }
+        cout << "\n";
     }
 }
 int32_t main() {

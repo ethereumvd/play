@@ -1,32 +1,32 @@
 #include<bits/stdc++.h>
 using namespace std;
+#define int long long
+//just fuck off such a small mistake
 void jogo() {
     int n; cin >> n;
     vector<vector<int>> adj(n,vector<int>());
-    vector<int> c(n);
+    vector<int> c(n), par(n); 
     int rt ;
     for(int i=0; i<n; i++) {
         int u, ci; cin >> u >> ci;
         if(u==-1){
             rt = i;
-            adj[0].push_back(i);
             c[i] = ci;
+            par[i] = -1;
             continue;
         }
         u--;
         adj[u].push_back(i);
         adj[i].push_back(u);
         c[i] = ci;
+        par[i] = u;
     }
     vector<int> ans;
     for(int i=0; i<n; i++) {
         if(i==rt) continue;
         int rem = 1;
         for(auto nd:adj[i]) {
-            if(nd==rt) {
-                rem &= c[rt] == 1 ? 1 : 0 ; 
-                continue;
-            }
+            if(nd==par[i]) continue;
             rem &= c[nd];
         }
         rem &= c[i];

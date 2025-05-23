@@ -10,8 +10,7 @@ func vars() {
 
 	var username string = "user"
 	var nameone = "mario"
-	var login uint8
-	login = 255
+	var login uint8 = 25
 	nametwo := "luigi"
 	var marks float64 = 17.812
 

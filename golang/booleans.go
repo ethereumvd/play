@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func main() {
+func bools() {
 	age := 49
 
 	fmt.Println(age >= 50)

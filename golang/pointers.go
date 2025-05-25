@@ -9,7 +9,7 @@ func newname(name *string) {
 	*name = "werner"
 }
 
-func main() {
+func pointers() {
 	pass_by_val()
 
 	name := "timo"

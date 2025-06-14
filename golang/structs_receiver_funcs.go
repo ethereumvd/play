@@ -58,4 +58,13 @@ func structss() {
 	fmt.Println(mybill.format())
 	mybill.additem("ice-cream", 11.99)
 	fmt.Println(mybill.format())
+
+	//throwawayt function
+
+	// language := struct {
+	// 	id int
+	// 	isok bool
+	// } {1, true}
+
+	// fmt.Println(language)
 }
